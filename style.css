@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Pro', serif;
+}
+
+#Day {
+    min-height: 100vh;
+    background-color: #87CEEB;
+    background-image: linear-gradient(170deg, #87CEEB 0%, #b8e4f7 50%, #fffbe6 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative sun */
+#Day::before {
+    content: '';
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, #FFFACD 20%, #FFD700 55%, rgba(255, 165, 0, 0) 80%);
+    border-radius: 50%;
+    animation: sunPulse 3.5s ease-in-out infinite;
+}
+
+/* Cloud strip at base */
+#Day::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.55) 0%, transparent 18%,
+            rgba(255, 255, 255, 0.5) 28%, transparent 45%,
+            rgba(255, 255, 255, 0.6) 60%, transparent 78%,
+            rgba(255, 255, 255, 0.45) 88%, transparent 100%);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+#Day .badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(0, 0, 100, 0.12);
+    border-radius: 99px;
+    padding: 5px 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #1a3a5c;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+#Day h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: #000000;
+    /* black text */
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+#Day p {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    color: #000000;
+    /* black text */
+    max-width: 500px;
+    line-height: 1.9;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+#Day .divider {
+    width: 52px;
+    height: 2px;
+    background: #FFA500;
+    border-radius: 10px;
+    margin: 24px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ─────────────────────────────────────────
+   NIGHT SECTION
+   dark blue background · white text
+───────────────────────────────────────── */
+
+#Night {
+    min-height: 100vh;
+    background-color: #0a1628;
+    /* dark blue background */
+    background-image: linear-gradient(170deg, #020b18 0%, #0a1628 45%, #0d1f3c 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* Crescent moon */
+#Night::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    background: #c8dff5;
+    border-radius: 50%;
+    box-shadow: -12px 4px 0 3px #0a1628;
+    animation: moonFloat 5s ease-in-out infinite;
+    z-index: 1;
+}
+
+#Night .badge {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 99px;
+    padding: 5px 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8ab4d4;
+    background: rgba(255, 255, 255, 0.04);
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+#Night h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: #ffffff;
+    /* white text */
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+#Night p {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    color: #b0cfe8;
+    /* white/light text */
+    max-width: 500px;
+    line-height: 1.9;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+#Night .divider {
+    width: 52px;
+    height: 2px;
+    background: #3a7bd5;
+    border-radius: 10px;
+    margin: 24px auto 0;
+    position: relative;
+    z-index: 1;
+}
